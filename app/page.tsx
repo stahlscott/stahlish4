@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import { BlogPosts } from 'app/components/posts'
+import { baseUrl } from 'app/sitemap'
 
 export default function Page() {
   return (
     <section>
       <div className="flex pb-8 space-x-8">
         <Image
-          src="/assets/gelato-sq.png"
+          src={`${baseUrl}/assets/gelato-sq.png`}
           alt="Scott Stahl"
           width={100}
           height={100}
