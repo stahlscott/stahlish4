@@ -1,6 +1,6 @@
 # stahlish blog portfolio whatever
 
-Built from https://portfolio-blog-starter.vercel.app
+Built from https://vercel.com/templates/next.js/portfolio-starter-kit
 
 ## Dev
 
@@ -8,9 +8,12 @@ Built from https://portfolio-blog-starter.vercel.app
 npm run dev
 ```
 
-## Deploying
+NextJS will update automatically.
+
+## Build before deploy
 
 ```bash
 npm run build
 ```
 
+Commit and push. Github Actions will deploy automatically.

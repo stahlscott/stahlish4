@@ -1,3 +1,4 @@
+import React from 'react';
 import { BlogPosts } from 'app/components/posts'
 
 export const metadata = {

@@ -1,6 +1,8 @@
+/* eslint-disable react/no-unknown-property */
+import React from 'react'
 import { ImageResponse } from 'next/og'
 
-export function GET(request: Request) {
+export function GET() {
   // let url = new URL(request.url)
   // let title = url.searchParams.get('title') || 'Scott Stahl'
 
