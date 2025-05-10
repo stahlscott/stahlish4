@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     default: 'Scott Stahl',
     template: '%s | Scott Stahl',
   },
-  description: 'Scott Stahl.',
+  description: '',
   openGraph: {
     title: 'Scott Stahl',
-    description: 'Scott Stahl.',
+    description: '',
     url: baseUrl,
     siteName: 'Scott Stahl',
     locale: 'en_US',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
 }
 
-const cx = (...classes) => classes.filter(Boolean).join(' ')
+const cx = (...classes: string[]) => classes.filter(Boolean).join(' ')
 
 export default function RootLayout({
   children,

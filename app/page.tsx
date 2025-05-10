@@ -23,7 +23,7 @@ export default function Page() {
         I was published in 2600 Magazine once.`}
       </p>
       <div className="my-8">
-        <BlogPosts />
+        <BlogPosts limit={5} />
       </div>
     </section>
   )
