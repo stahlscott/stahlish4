@@ -19,9 +19,11 @@ export default function Page() {
         </h1>
       </div>
       <p className="mb-4">
-        {`Full stack software engineer & web developer, mainly Python and React.
-        Modular synthesist, mainly Mannequins & Make Noise modules.
-        I was published in 2600 Magazine once.`}
+        Full stack software engineer & web developer, mainly Python and React.
+        <br/>
+        Modular synthesizers, mainly Mannequins & Make Noise modules.
+        <br/>
+        I was published in 2600 Magazine once.
       </p>
       <div className="my-8">
         <BlogPosts limit={5} />
