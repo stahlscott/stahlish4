@@ -86,11 +86,11 @@ export default function Blog({ params }: BlogProps) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
+      <h1 className="title font-semibold text-2xl tracking-tighter primary-header">
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-400">
+        <p className="text-sm text-neutral-400 secondary-text">
           {formatDate(post.metadata.publishedAt, true)}
         </p>
       </div>

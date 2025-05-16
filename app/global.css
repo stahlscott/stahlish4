@@ -31,16 +31,22 @@
 
 html {
   @apply bg-gradient-to-r from-slate-700 to-slate-800 text-white;
-  min-width: 360px;
 }
 
-/* [data-theme='y2k'] html {
+html[data-theme='light'] {
+  @apply bg-gradient-to-r from-slate-100 to-slate-300 text-black;
+}
+
+html[data-theme='y2k'] {
   @apply bg-[url("/assets/starry-sky-pixel.png")] bg-repeat;
-  min-width: 360px;
-} */
+}
 
 .primary-header {
   @apply text-white font-sans;
+}
+
+html[data-theme='light'] .primary-header {
+  @apply text-black font-sans;
 }
 
 [data-theme='y2k'] .primary-header {
@@ -49,6 +55,10 @@ html {
 
 .primary-text {
   @apply text-white font-sans
+}
+
+html[data-theme='light'] .primary-text {
+  @apply text-black font-sans;
 }
 
 [data-theme='y2k'] .primary-text {
@@ -60,8 +70,12 @@ html {
   @apply text-neutral-400 font-sans;
 }
 
+html[data-theme='light'] .secondary-text {
+  @apply text-neutral-600 font-sans;
+}
+
 [data-theme='y2k'] .secondary-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-700 to-indigo-800 font-mono;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-800 to-cyan-800 font-mono;
   @apply text-xs;
 }
 
@@ -73,17 +87,22 @@ html {
   @apply text-neutral-200;
 }
 
+html[data-theme='light'] .primary-link {
+  @apply text-black font-sans;
+}
+
+html[data-theme='light'] .primary-link:hover {
+  @apply text-neutral-600;
+}
+
 [data-theme='y2k'] .primary-link {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-500 font-mono;
   @apply text-xs
 }
 
-
 [data-theme='y2k'] .primary-link:hover {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500;
 }
-
-
 
 .prose .anchor {
   @apply absolute invisible no-underline;
@@ -99,8 +118,18 @@ html {
   @apply visible;
 }
 
+/* MDX Formatting */
+
 .prose a {
   @apply underline transition-all decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+[data-theme='light'] .prose a {
+  @apply underline transition-all decoration-neutral-400 underline-offset-2 decoration-[0.1em];
+}
+
+[data-theme='y2k'] .prose a {
+  @apply underline transition-all decoration-orange-500 underline-offset-2 decoration-[0.1em];
 }
 
 .prose .anchor:after {
@@ -137,6 +166,15 @@ html {
 
 .prose p {
   @apply my-4 text-neutral-200;
+}
+
+[data-theme='light'] .prose p {
+  @apply text-neutral-800;
+}
+
+[data-theme='y2k'] .prose p {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 font-mono;
+  @apply text-sm;
 }
 
 .prose h1 {
