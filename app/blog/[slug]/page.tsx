@@ -2,7 +2,6 @@ import React from 'react';
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { BlogPost, formatDate, getBlogPosts } from 'app/blog/utils'
-import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
   const posts = getBlogPosts()
@@ -30,7 +29,7 @@ export function generateMetadata({ params }: BlogProps) {
   } = post.metadata
   const ogImage = image
     ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+    : `${process.env.BASE_URL}/og?title=${encodeURIComponent(title)}`
 
   return {
     title,
@@ -40,7 +39,7 @@ export function generateMetadata({ params }: BlogProps) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${process.env.BASE_URL}/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -77,9 +76,9 @@ export default function Blog({ params }: BlogProps) {
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
             image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
+              ? `${process.env.BASE_URL}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            url: `${process.env.BASE_URL}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'Scott Stahl',

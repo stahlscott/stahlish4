@@ -3,14 +3,15 @@ import './global.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+
+import { Navbar } from './components/nav'
 import Footer from './components/footer'
-import { baseUrl } from './sitemap'
+import { ThemeProvider } from 'next-themes'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
+  metadataBase: new URL(process.env.BASE_URL || ''),
   title: {
     default: 'Scott Stahl',
     template: '%s | Scott Stahl',
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Scott Stahl',
     description: '',
-    url: baseUrl,
+    url: process.env.BASE_URL,
     siteName: 'Scott Stahl',
     locale: 'en_US',
     type: 'website',
@@ -45,22 +46,25 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    // TODO: is it possible to change bg color with theme?
     <html
       lang="en"
       className={cx(
-        'text-white bg-slate-800',
         GeistSans.variable,
         GeistMono.variable
       )}
+      suppressHydrationWarning
     >
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+        <ThemeProvider>
+          <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+            <Navbar />
+            {children}
+            <Footer />
+            <Analytics />
+            <SpeedInsights />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )

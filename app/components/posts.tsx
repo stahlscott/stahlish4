@@ -28,10 +28,10 @@ export function BlogPosts({ limit }: BlogPostsType) {
           href={`/blog/${post.slug}`}
         >
           <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-            <p className="text-neutral-400 w-[140px] tabular-nums">
+            <p className="secondary-text w-[140px] tabular-nums">
               {formatDate(post.metadata.publishedAt)}
             </p>
-            <p className="text-neutral-100 tracking-tight">
+            <p className="primary-text tracking-tight">
               {post.metadata.title}
             </p>
           </div>
@@ -40,7 +40,7 @@ export function BlogPosts({ limit }: BlogPostsType) {
       {showMoreLink && (
         <Link
           href={`/blog`}
-          className="transition-all hover:text-neutral-200"
+          className="transition-all primary-link"
         >
           ...more
         </Link>

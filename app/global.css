@@ -30,8 +30,60 @@
 }
 
 html {
+  @apply bg-gradient-to-r from-slate-700 to-slate-800 text-white;
   min-width: 360px;
 }
+
+/* [data-theme='y2k'] html {
+  @apply bg-[url("/assets/starry-sky-pixel.png")] bg-repeat;
+  min-width: 360px;
+} */
+
+.primary-header {
+  @apply text-white font-sans;
+}
+
+[data-theme='y2k'] .primary-header {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 font-mono;
+}
+
+.primary-text {
+  @apply text-white font-sans
+}
+
+[data-theme='y2k'] .primary-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 font-mono;
+  @apply text-xs;
+}
+
+.secondary-text {
+  @apply text-neutral-400 font-sans;
+}
+
+[data-theme='y2k'] .secondary-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-700 to-indigo-800 font-mono;
+  @apply text-xs;
+}
+
+.primary-link {
+  @apply text-white font-sans;
+}
+
+.primary-link:hover {
+  @apply text-neutral-200;
+}
+
+[data-theme='y2k'] .primary-link {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-500 font-mono;
+  @apply text-xs
+}
+
+
+[data-theme='y2k'] .primary-link:hover {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500;
+}
+
+
 
 .prose .anchor {
   @apply absolute invisible no-underline;

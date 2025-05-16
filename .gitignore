@@ -38,3 +38,6 @@ next-env.d.ts
 
 # vscode config
 .vscode
+
+# internal files
+/app/blog/posts/drafts/
