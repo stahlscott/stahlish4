@@ -1,13 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 import { BlogPosts } from 'app/components/posts'
+import gelato from 'public/assets/gelato-sq.png'
 
 export default function Page() {
   return (
     <section>
       <div className="flex pb-8 space-x-8">
         <Image
-          src={`${process.env.BASE_URL}/assets/gelato-sq.png`}
+          src={gelato}
           alt="Scott Stahl"
           width={100}
           height={100}
