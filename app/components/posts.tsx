@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { formatDate, getBlogPosts, leetTextTransform } from 'app/blog/utils'
 
 type BlogPostsType = {
   // A limit on the number of posts to show
@@ -28,22 +28,36 @@ export function BlogPosts({ limit }: BlogPostsType) {
           href={`/blog/${post.slug}`}
         >
           <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-            <p className="secondary-text w-[140px] tabular-nums">
+            <p className="secondary-text w-[140px] tabular-nums standard-text">
               {formatDate(post.metadata.publishedAt)}
             </p>
-            <p className="primary-text tracking-tight">
+            <p className="secondary-text w-[140px] tabular-nums leet-text">
+              {leetTextTransform(formatDate(post.metadata.publishedAt))}
+            </p>
+            <p className="primary-text tracking-tight standard-text">
               {post.metadata.title}
+            </p>
+            <p className="primary-text tracking-tight leet-text">
+              {leetTextTransform(post.metadata.title)}
             </p>
           </div>
         </Link>
       ))}
       {showMoreLink && (
-        <Link
-          href={`/blog`}
-          className="transition-all primary-link"
-        >
-          ...more
-        </Link>
+        <div>
+          <Link
+            href={`/blog`}
+            className="transition-all primary-link standard-text"
+          >
+            ...more
+          </Link>
+          <Link
+            href={`/blog`}
+            className="transition-all primary-link leet-text"
+          >
+            {leetTextTransform('...more')}
+          </Link>
+        </div>
       )}
     </div>
   )

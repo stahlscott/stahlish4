@@ -4,6 +4,31 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
+import { leetTextTransform } from '../blog/utils'
+
+function LeetTexter({ children, ...props }) {
+  const leetText = Array.isArray(children)
+    ? children.map(child => {
+      if (typeof child === 'string') {
+        return leetTextTransform(child);
+      }
+      return child;
+    })
+    : typeof children === 'string'
+      ? leetTextTransform(children)
+      : children;
+
+  return (
+    <div>
+      <p className="standard-text" {...props}>
+        {children}
+      </p>
+      <p className="leet-text" {...props}>
+        {leetText}
+      </p>
+    </div>
+  )
+}
 
 function Table({ data }) {
   const headers = data.headers.map((header, index) => (
@@ -98,6 +123,7 @@ const components = {
   a: CustomLink,
   code: Code,
   Table,
+  p: LeetTexter,
 }
 
 export function CustomMDX(props) {

@@ -25,6 +25,7 @@ export const Alien = () => {
         alt="theme"
         width={20}
         height={20}
+        unoptimized
       />
     </button>
   )

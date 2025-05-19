@@ -41,6 +41,30 @@ html[data-theme='y2k'] {
   @apply bg-[url("/assets/starry-sky-pixel.png")] bg-repeat;
 }
 
+html[data-theme='y2k'] .leet-text {
+  @apply visible
+}
+
+html[data-theme='light'] .leet-text {
+  @apply hidden
+}
+
+html[data-theme='dark'] .leet-text {
+  @apply hidden
+}
+
+html[data-theme='y2k'] .standard-text {
+  @apply hidden
+}
+
+html[data-theme='light'] .standard-text {
+  @apply visible
+}
+
+html[data-theme='dark'] .standard-text {
+  @apply visible
+}
+
 .primary-header {
   @apply text-white font-sans;
 }
@@ -50,7 +74,7 @@ html[data-theme='light'] .primary-header {
 }
 
 [data-theme='y2k'] .primary-header {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 font-mono;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 font-mono lowercase;
 }
 
 .primary-text {
@@ -62,7 +86,7 @@ html[data-theme='light'] .primary-text {
 }
 
 [data-theme='y2k'] .primary-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 font-mono;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 font-mono lowercase;
   @apply text-xs;
 }
 
@@ -75,7 +99,7 @@ html[data-theme='light'] .secondary-text {
 }
 
 [data-theme='y2k'] .secondary-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-800 to-cyan-800 font-mono;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-800 to-cyan-800 font-mono lowercase;
   @apply text-xs;
 }
 
@@ -96,12 +120,12 @@ html[data-theme='light'] .primary-link:hover {
 }
 
 [data-theme='y2k'] .primary-link {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-500 font-mono;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-500 font-mono lowercase;
   @apply text-xs
 }
 
 [data-theme='y2k'] .primary-link:hover {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500 font-mono lowercase;
 }
 
 .prose .anchor {
@@ -129,7 +153,7 @@ html[data-theme='light'] .primary-link:hover {
 }
 
 [data-theme='y2k'] .prose a {
-  @apply underline transition-all decoration-orange-500 underline-offset-2 decoration-[0.1em];
+  @apply underline transition-all decoration-orange-500 underline-offset-2 decoration-[0.1em] font-mono lowercase;
 }
 
 .prose .anchor:after {
@@ -173,7 +197,7 @@ html[data-theme='light'] .primary-link:hover {
 }
 
 [data-theme='y2k'] .prose p {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 font-mono;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 font-mono lowercase;
   @apply text-sm;
 }
 
